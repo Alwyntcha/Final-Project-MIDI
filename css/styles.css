@@ -1,0 +1,293 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-image: url("../img/background.jpg");
+}
+
+.container {
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 30px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.theHeading {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px black solid;
+  letter-spacing: 7px;
+  padding-left: 30px;
+}
+
+.smallRecord {
+  margin: 0 5px 0 1px;
+}
+
+.beatsAll {
+  border: 3px black solid;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1px;
+  min-width:690px;
+  background-color: white;
+  border-radius: 1%;
+}
+
+.topRow {
+  border-bottom: 3px black solid;
+}
+
+.beatsRow {
+  display: grid;
+  grid-template-columns: 50px repeat(32, 1fr);
+  grid-gap: 1px;
+}
+
+.spot:nth-child(4n + 2) {
+  background-color: #828282;
+}
+
+.cell {
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+.spot {
+  background-color: #a3a3a3;
+}
+
+.spot:hover {
+  filter: brightness(90%);
+}
+
+.instrumentRow:hover {
+  filter: opacity(.9);
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  height: 40px;
+  width: 80px;
+  margin: 20px;
+}
+
+.icon {
+  height: 25px;
+}
+
+.playButton {
+  display: show;
+}
+
+.play {
+  height: 20px;
+}
+
+.clear,
+.pause,
+.save {
+  width: 23px;
+  height: 23px;
+}
+
+.pauseButton {
+  display: none;
+}
+
+.tooltips {
+  position: relative;
+}
+
+.saveButton {
+  display: none;
+}
+
+.tooltips .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  right: 0;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltips .tooltiptextsave {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  margin-left: 10px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltips .tooltiptext::after,
+.tooltips .tooltiptextsave::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltips:hover .tooltiptext,
+.tooltips:hover .tooltiptextsave {
+  visibility: visible;
+  opacity: 1;
+}
+
+#snare .snare,
+#snare .cellName {
+  background-color: rgb(0, 97, 130);
+}
+
+#bass .bass,
+#bass .cellName {
+  background: rgb(0, 129, 0);
+}
+
+#hihat .hihat,
+#hihat .cellName {
+  background: rgb(159, 16, 0);
+}
+
+#bongo .bongo,
+#bongo .cellName {
+  background: #4d0084;
+}
+
+#keys .keys,
+#keys .cellName {
+  background: #808300;
+}
+
+.recordImage {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.record {
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  max-width: 250px;
+}
+
+.bars div {
+  width: 9%;
+  height: 0;
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+}
+
+.bar1 {
+  left: 10%;
+  background-color: #FFAF26;
+}
+
+.bar2 {
+  left: 20%;
+  background-color: #FFDDA1
+}
+
+.bar3{
+  left: 30%;
+  background-color: #03256C
+}
+
+.bar4 {
+  left: 40%;
+  background-color: #335C81
+}
+
+.bar5 {
+  left: 50%;
+  background-color: #1768AC
+}
+
+.bar6 {
+  left: 60%;
+  background-color: #65AFFF
+}
+
+.bar7 {
+  left: 70%;
+  background-color: #5899E2
+}
+
+.bar8 {
+  left: 80%;
+  background-color: #008ED1
+}
+
+#saveIcons {
+  position: relative;
+  margin-top: -59px;
+  margin-bottom: 10%;
+}
+
+#rightAlign {
+  position: absolute;
+  right: 5%;
+}
+
+#rightAlign p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.saved {
+  height: 38px;
+  width: 38px;
+  background-color: lightgrey;
+  opacity: .8;
+  border-radius: 10%;
+  border-style: ridge;
+  margin-bottom: 25%;
+  margin-right: -20px;
+}
+
+.boxed {
+  background-color: lightblue;
+}
+
+/*making image elements and space between buttons unhighlightable, since drag select option can cause that as side effect */
+img, .buttons {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
